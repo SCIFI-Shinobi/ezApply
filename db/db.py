@@ -15,6 +15,17 @@ def get_conn():
     return psycopg2.connect(DATABASE_URL)
 
 
+def init_db():
+    if not DATABASE_URL:
+        return
+    schema_path = os.path.join(os.path.dirname(__file__), "schema.sql")
+    with open(schema_path, "r", encoding="utf-8") as f:
+        schema = f.read()
+    with get_conn() as conn, conn.cursor() as cur:
+        cur.execute(schema)
+        conn.commit()
+
+
 def save_profile(raw_text: str, extracted_json: dict, embedding: list):
     with get_conn() as conn, conn.cursor() as cur:
         cur.execute(
