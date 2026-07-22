@@ -7,6 +7,11 @@ DATABASE_URL = os.environ.get("DATABASE_URL")
 
 
 def get_conn():
+    if not DATABASE_URL:
+        raise RuntimeError(
+            "DATABASE_URL environment variable is not set! "
+            "Please add your Supabase Postgres connection string to your Render environment variables."
+        )
     return psycopg2.connect(DATABASE_URL)
 
 
