@@ -14,7 +14,7 @@ from config.defaults import load_applyflow_profile
 from outreach.company_contacts import best_email_for_company, load_contacts
 
 
-DEFAULT_COMPANIES_PATH = Path(__file__).resolve().parents[2] / "ApplyFlow" / "remote_companies.json"
+DEFAULT_COMPANIES_PATH = Path(__file__).resolve().parents[1] / "applyflow_data" / "remote_companies.json"
 DEFAULT_OUTPUT_PATH = Path(__file__).resolve().parent / "internship_outreach_drafts.csv"
 
 SUBJECT = "Internship inquiry - Computer Engineering graduate"

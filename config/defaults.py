@@ -160,6 +160,11 @@ def applyflow_profile_path() -> Path:
     override = os.environ.get("APPLYFLOW_PROFILE_PATH")
     if override:
         return Path(override)
+    # First check bundled data inside the repo (deployed on Render)
+    bundled = Path(__file__).resolve().parents[1] / "applyflow_data" / "profile.json"
+    if bundled.exists():
+        return bundled
+    # Fallback: sibling ApplyFlow folder (local dev)
     return Path(__file__).resolve().parents[2] / "ApplyFlow" / "profile.json"
 
 
@@ -217,6 +222,10 @@ def applyflow_channels_path() -> Path:
     if override:
         base = Path(override).parent
     else:
+        # Check bundled data first
+        bundled = Path(__file__).resolve().parents[1] / "applyflow_data" / "channels.json"
+        if bundled.exists():
+            return bundled
         base = Path(__file__).resolve().parents[2] / "ApplyFlow"
     return base / "channels.json"
 

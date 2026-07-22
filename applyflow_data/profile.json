@@ -1,0 +1,88 @@
+{
+  "personal": {
+    "fullName": "Eyobel Zeleke Berie",
+    "firstName": "Eyobel",
+    "middleName": "Zeleke",
+    "lastName": "Berie",
+    "title": "Embedded AI Engineer | Full-Stack Systems Developer",
+    "email": "eyobzeleke@gmail.com",
+    "phone": "+251932344160",
+    "location": "Bahir Dar, Ethiopia",
+    "city": "Bahir Dar",
+    "country": "Ethiopia",
+    "website": "https://eyobelz-portfolio.vercel.app",
+    "linkedin": "",
+    "github": ""
+  },
+  "summary": "Computer Engineering graduate with hands-on experience across embedded AI systems, full-stack web development, and backend engineering. Built and deployed production-grade applications ranging from TinyML plant health monitoring on resource-constrained hardware to RESTful backends and responsive marketplace platforms. Skilled in bridging low-level embedded systems with cloud-connected full-stack solutions, with a strong focus on real-world problem solving and clean system architecture.",
+  "experience": [
+    {
+      "title": "Lead Developer",
+      "company": "Mango Guard",
+      "startDate": "2025-08",
+      "endDate": "2026-05",
+      "current": false,
+      "description": "Architected and deployed a production TinyML plant health monitoring system for real-time agricultural disease detection on Arduino Nano 33 BLE Sense. Built end-to-end system: MobileNetV1 edge inference → Raspberry Pi UART gateway → FastAPI backend → React dashboard. Optimized RAM allocation, implemented LGBM disease forecasting model, and resolved critical embedded constraints."
+    },
+    {
+      "title": "Network Engineering Intern",
+      "company": "Injibara University ICT Executive",
+      "startDate": "2025-04",
+      "endDate": "2025-06",
+      "current": false,
+      "description": "Designed a three-tier hierarchical network with OSPF routing and HSRP gateway redundancy. Deployed SNMP-based monitoring for proactive fault detection. Handled structured cabling (TIA-568B), access point provisioning, and hardware link debugging."
+    },
+    {
+      "title": "Backend Developer",
+      "company": "Hotel Management System",
+      "startDate": "2024-12",
+      "endDate": "2025-01",
+      "current": false,
+      "description": "Engineered RESTful backend with Spring Boot & PostgreSQL for booking and room management. Implemented JWT authentication and role-based session management."
+    },
+    {
+      "title": "Front-End Developer",
+      "company": "Wubet Digital Platform",
+      "startDate": "2024-09",
+      "endDate": "2024-11",
+      "current": false,
+      "description": "Built responsive MVP marketplace connecting Ethiopian fashion designers with global clients using React and WooCommerce. Designed auth flows, product showcase, and payment integration."
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc.",
+      "field": "Computer Engineering",
+      "school": "Bahir Dar University",
+      "location": "Bahir Dar, Ethiopia",
+      "graduationYear": "2026"
+    },
+    {
+      "degree": "B.A.",
+      "field": "Accounting and Finance",
+      "school": "Blue Mark College",
+      "location": "Bahir Dar, Ethiopia",
+      "graduationYear": "2026",
+      "gpa": "3.96"
+    }
+  ],
+  "skills": [
+    {"name": "Python", "level": 3},
+    {"name": "C/C++", "level": 3},
+    {"name": "Arduino", "level": 3},
+    {"name": "React", "level": 2},
+    {"name": "FastAPI", "level": 3},
+    {"name": "PostgreSQL", "level": 2},
+    {"name": "Spring Boot", "level": 2},
+    {"name": "RESTful APIs", "level": 2},
+    {"name": "Git", "level": 3},
+    {"name": "Linux", "level": 3},
+    {"name": "Docker", "level": 2},
+    {"name": "Java", "level": 2},
+    {"name": "JavaScript", "level": 2}
+  ],
+  "languages": [
+    {"name": "Amharic", "proficiency": "Native"},
+    {"name": "English", "proficiency": "Fluent"}
+  ]
+}

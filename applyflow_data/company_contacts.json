@@ -1,0 +1,572 @@
+{
+  "10up": {
+    "company": "10up",
+    "domain": "10up.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@10up.com",
+      "jobs@10up.com",
+      "talent@10up.com",
+      "recruiting@10up.com",
+      "hr@10up.com",
+      "internships@10up.com",
+      "people@10up.com",
+      "hello@10up.com",
+      "contact@10up.com"
+    ],
+    "sources": [
+      "https://10up.com/",
+      "https://10up.com/contact/",
+      "https://10up.com/careers/",
+      "https://10up.com/about/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "37signals": {
+    "company": "37signals",
+    "domain": "37signals.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@37signals.com",
+      "jobs@37signals.com",
+      "talent@37signals.com",
+      "recruiting@37signals.com",
+      "hr@37signals.com",
+      "internships@37signals.com",
+      "people@37signals.com",
+      "hello@37signals.com",
+      "contact@37signals.com"
+    ],
+    "sources": [
+      "https://37signals.com/",
+      "https://basecamp.com/support",
+      "https://37signals.com/jobs",
+      "https://basecamp.com/about"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "3Blocks": {
+    "company": "3Blocks",
+    "domain": "3blocks.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@3blocks.com",
+      "jobs@3blocks.com",
+      "talent@3blocks.com",
+      "recruiting@3blocks.com",
+      "hr@3blocks.com",
+      "internships@3blocks.com",
+      "people@3blocks.com",
+      "hello@3blocks.com",
+      "contact@3blocks.com"
+    ],
+    "sources": [],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "42 Technologies": {
+    "company": "42 Technologies",
+    "domain": "42technologies.com",
+    "verified_emails": [
+      "hello@42technologies.com"
+    ],
+    "possible_emails": [
+      "careers@42technologies.com",
+      "jobs@42technologies.com",
+      "talent@42technologies.com",
+      "recruiting@42technologies.com",
+      "hr@42technologies.com",
+      "internships@42technologies.com",
+      "people@42technologies.com",
+      "hello@42technologies.com",
+      "contact@42technologies.com"
+    ],
+    "sources": [
+      "https://www.42technologies.com/",
+      "https://www.42technologies.com/about"
+    ],
+    "confidence": "verified",
+    "notes": "Emails found on company pages."
+  },
+  "90 Seconds": {
+    "company": "90 Seconds",
+    "domain": "90seconds.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@90seconds.com",
+      "jobs@90seconds.com",
+      "talent@90seconds.com",
+      "recruiting@90seconds.com",
+      "hr@90seconds.com",
+      "internships@90seconds.com",
+      "people@90seconds.com",
+      "hello@90seconds.com",
+      "contact@90seconds.com"
+    ],
+    "sources": [
+      "https://90seconds.com/",
+      "https://90seconds.com/contact",
+      "https://90seconds.com/careers",
+      "https://90seconds.com/jobs"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Abstract API": {
+    "company": "Abstract API",
+    "domain": "abstractapi.com",
+    "verified_emails": [
+      "team@abstractapi.com"
+    ],
+    "possible_emails": [
+      "careers@abstractapi.com",
+      "jobs@abstractapi.com",
+      "talent@abstractapi.com",
+      "recruiting@abstractapi.com",
+      "hr@abstractapi.com",
+      "internships@abstractapi.com",
+      "people@abstractapi.com",
+      "hello@abstractapi.com",
+      "contact@abstractapi.com"
+    ],
+    "sources": [
+      "https://www.abstractapi.com/",
+      "https://www.abstractapi.com/about"
+    ],
+    "confidence": "verified",
+    "notes": "Emails found on company pages."
+  },
+  "Acquia": {
+    "company": "Acquia",
+    "domain": "acquia.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@acquia.com",
+      "jobs@acquia.com",
+      "talent@acquia.com",
+      "recruiting@acquia.com",
+      "hr@acquia.com",
+      "internships@acquia.com",
+      "people@acquia.com",
+      "hello@acquia.com",
+      "contact@acquia.com"
+    ],
+    "sources": [
+      "https://www.acquia.com/",
+      "https://www.acquia.com/contact",
+      "https://www.acquia.com/careers",
+      "https://www.acquia.com/careers/open-positions"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Adzuna": {
+    "company": "Adzuna",
+    "domain": "adzuna.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@adzuna.com",
+      "jobs@adzuna.com",
+      "talent@adzuna.com",
+      "recruiting@adzuna.com",
+      "hr@adzuna.com",
+      "internships@adzuna.com",
+      "people@adzuna.com",
+      "hello@adzuna.com",
+      "contact@adzuna.com"
+    ],
+    "sources": [],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Akka": {
+    "company": "Akka",
+    "domain": "akka.io",
+    "verified_emails": [
+      "pr@akka.io",
+      "programs@akka.io"
+    ],
+    "possible_emails": [
+      "careers@akka.io",
+      "jobs@akka.io",
+      "talent@akka.io",
+      "recruiting@akka.io",
+      "hr@akka.io",
+      "internships@akka.io",
+      "people@akka.io",
+      "hello@akka.io",
+      "contact@akka.io"
+    ],
+    "sources": [
+      "https://akka.io/",
+      "https://akka.io/contact-us"
+    ],
+    "confidence": "verified",
+    "notes": "Emails found on company pages."
+  },
+  "ALICE": {
+    "company": "ALICE",
+    "domain": "alice.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@alice.com",
+      "jobs@alice.com",
+      "talent@alice.com",
+      "recruiting@alice.com",
+      "hr@alice.com",
+      "internships@alice.com",
+      "people@alice.com",
+      "hello@alice.com",
+      "contact@alice.com"
+    ],
+    "sources": [
+      "https://alice.com/",
+      "https://alice.com/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Alight Solutions": {
+    "company": "Alight Solutions",
+    "domain": "alight.com",
+    "verified_emails": [
+      "alightcareers@alight.com"
+    ],
+    "possible_emails": [
+      "careers@alight.com",
+      "jobs@alight.com",
+      "talent@alight.com",
+      "recruiting@alight.com",
+      "hr@alight.com",
+      "internships@alight.com",
+      "people@alight.com",
+      "hello@alight.com",
+      "contact@alight.com"
+    ],
+    "sources": [
+      "https://www.alight.com:443/",
+      "https://careers.alight.com/us/en",
+      "https://www.alight.com:443/about"
+    ],
+    "confidence": "verified",
+    "notes": "Emails found on company pages."
+  },
+  "Amazon": {
+    "company": "Amazon",
+    "domain": "amazon.jobs",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@amazon.jobs",
+      "jobs@amazon.jobs",
+      "talent@amazon.jobs",
+      "recruiting@amazon.jobs",
+      "hr@amazon.jobs",
+      "internships@amazon.jobs",
+      "people@amazon.jobs",
+      "hello@amazon.jobs",
+      "contact@amazon.jobs"
+    ],
+    "sources": [
+      "https://amazon.jobs/en/",
+      "https://www.amazon.jobs/en/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Andela": {
+    "company": "Andela",
+    "domain": "andela.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@andela.com",
+      "jobs@andela.com",
+      "talent@andela.com",
+      "recruiting@andela.com",
+      "hr@andela.com",
+      "internships@andela.com",
+      "people@andela.com",
+      "hello@andela.com",
+      "contact@andela.com"
+    ],
+    "sources": [
+      "https://www.andela.com/",
+      "https://www.andela.com/for-talent",
+      "https://www.andela.com/about",
+      "https://www.andela.com/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Appcues": {
+    "company": "Appcues",
+    "domain": "appcues.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@appcues.com",
+      "jobs@appcues.com",
+      "talent@appcues.com",
+      "recruiting@appcues.com",
+      "hr@appcues.com",
+      "internships@appcues.com",
+      "people@appcues.com",
+      "hello@appcues.com",
+      "contact@appcues.com"
+    ],
+    "sources": [
+      "https://www.appcues.com/",
+      "https://www.appcues.com/",
+      "https://www.appcues.com/careers",
+      "https://www.appcues.com/company#jobs-open"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Applaudo": {
+    "company": "Applaudo",
+    "domain": "applaudo.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@applaudo.com",
+      "jobs@applaudo.com",
+      "talent@applaudo.com",
+      "recruiting@applaudo.com",
+      "hr@applaudo.com",
+      "internships@applaudo.com",
+      "people@applaudo.com",
+      "hello@applaudo.com",
+      "contact@applaudo.com"
+    ],
+    "sources": [
+      "https://applaudo.com/",
+      "https://www.applaudo.com/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Applied AI Company (AAICO)": {
+    "company": "Applied AI Company (AAICO)",
+    "domain": "appliedaicompanyaaico.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@appliedaicompanyaaico.com",
+      "jobs@appliedaicompanyaaico.com",
+      "talent@appliedaicompanyaaico.com",
+      "recruiting@appliedaicompanyaaico.com",
+      "hr@appliedaicompanyaaico.com",
+      "internships@appliedaicompanyaaico.com",
+      "people@appliedaicompanyaaico.com",
+      "hello@appliedaicompanyaaico.com",
+      "contact@appliedaicompanyaaico.com"
+    ],
+    "sources": [],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Appwrite": {
+    "company": "Appwrite",
+    "domain": "appwrite.io",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@appwrite.io",
+      "jobs@appwrite.io",
+      "talent@appwrite.io",
+      "recruiting@appwrite.io",
+      "hr@appwrite.io",
+      "internships@appwrite.io",
+      "people@appwrite.io",
+      "hello@appwrite.io",
+      "contact@appwrite.io"
+    ],
+    "sources": [
+      "https://appwrite.io/",
+      "https://appwrite.io/contact-us",
+      "https://www.appwrite.careers/",
+      "https://appwrite.io/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "argyle": {
+    "company": "argyle",
+    "domain": "argyle.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@argyle.com",
+      "jobs@argyle.com",
+      "talent@argyle.com",
+      "recruiting@argyle.com",
+      "hr@argyle.com",
+      "internships@argyle.com",
+      "people@argyle.com",
+      "hello@argyle.com",
+      "contact@argyle.com"
+    ],
+    "sources": [
+      "https://www.argyle.com/",
+      "https://www.argyle.com/contact-sales",
+      "https://www.argyle.com/careers",
+      "https://www.argyle.com/about"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "ARK": {
+    "company": "ARK",
+    "domain": "ark.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@ark.com",
+      "jobs@ark.com",
+      "talent@ark.com",
+      "recruiting@ark.com",
+      "hr@ark.com",
+      "internships@ark.com",
+      "people@ark.com",
+      "hello@ark.com",
+      "contact@ark.com"
+    ],
+    "sources": [],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Arkency": {
+    "company": "Arkency",
+    "domain": "arkency.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@arkency.com",
+      "jobs@arkency.com",
+      "talent@arkency.com",
+      "recruiting@arkency.com",
+      "hr@arkency.com",
+      "internships@arkency.com",
+      "people@arkency.com",
+      "hello@arkency.com",
+      "contact@arkency.com"
+    ],
+    "sources": [
+      "https://arkency.com/",
+      "https://arkency.com/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Articulate": {
+    "company": "Articulate",
+    "domain": "articulate.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@articulate.com",
+      "jobs@articulate.com",
+      "talent@articulate.com",
+      "recruiting@articulate.com",
+      "hr@articulate.com",
+      "internships@articulate.com",
+      "people@articulate.com",
+      "hello@articulate.com",
+      "contact@articulate.com"
+    ],
+    "sources": [
+      "https://www.articulate.com:443/",
+      "https://www.articulate.com/about/",
+      "https://www.articulate.com/",
+      "https://www.articulate.com/about/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Asana": {
+    "company": "Asana",
+    "domain": "asana.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@asana.com",
+      "jobs@asana.com",
+      "talent@asana.com",
+      "recruiting@asana.com",
+      "hr@asana.com",
+      "internships@asana.com",
+      "people@asana.com",
+      "hello@asana.com",
+      "contact@asana.com"
+    ],
+    "sources": [
+      "https://asana.com/",
+      "https://help.asana.com/s/?language=en_US#chat",
+      "https://asana.com/jobs",
+      "https://asana.com/jobs"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "AtoZDebug": {
+    "company": "AtoZDebug",
+    "domain": "atozdebug.com",
+    "verified_emails": [
+      "info@atozdebug.com"
+    ],
+    "possible_emails": [
+      "careers@atozdebug.com",
+      "jobs@atozdebug.com",
+      "talent@atozdebug.com",
+      "recruiting@atozdebug.com",
+      "hr@atozdebug.com",
+      "internships@atozdebug.com",
+      "people@atozdebug.com",
+      "hello@atozdebug.com",
+      "contact@atozdebug.com"
+    ],
+    "sources": [
+      "https://atozdebug.com/",
+      "https://atozdebug.com/contact-us/",
+      "https://atozdebug.com/about-us/"
+    ],
+    "confidence": "verified",
+    "notes": "Emails found on company pages."
+  },
+  "Audiense": {
+    "company": "Audiense",
+    "domain": "audiense.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@audiense.com",
+      "jobs@audiense.com",
+      "talent@audiense.com",
+      "recruiting@audiense.com",
+      "hr@audiense.com",
+      "internships@audiense.com",
+      "people@audiense.com",
+      "hello@audiense.com",
+      "contact@audiense.com"
+    ],
+    "sources": [
+      "https://www.audiense.com/",
+      "https://www.audiense.com/contact/",
+      "https://www.audiense.com/about/",
+      "https://www.audiense.com/"
+    ],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  },
+  "Aula Education": {
+    "company": "Aula Education",
+    "domain": "aulaeducation.com",
+    "verified_emails": [],
+    "possible_emails": [
+      "careers@aulaeducation.com",
+      "jobs@aulaeducation.com",
+      "talent@aulaeducation.com",
+      "recruiting@aulaeducation.com",
+      "hr@aulaeducation.com",
+      "internships@aulaeducation.com",
+      "people@aulaeducation.com",
+      "hello@aulaeducation.com",
+      "contact@aulaeducation.com"
+    ],
+    "sources": [],
+    "confidence": "guessed-domain",
+    "notes": "No public email found; possible emails are guesses from the domain."
+  }
+}

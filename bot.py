@@ -1,5 +1,7 @@
 import os
 import runpy
+import subprocess
+import sys
 import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
@@ -29,4 +31,10 @@ def start_http_server():
 
 if __name__ == "__main__":
     threading.Thread(target=start_http_server, daemon=True).start()
+    
+    # Launch the userbot to monitor channels (it will gracefully exit if TG_SESSION_STRING is missing)
+    userbot_path = str(Path(__file__).parent / "userbot" / "userbot.py")
+    subprocess.Popen([sys.executable, userbot_path])
+    
+    # Run the main telegram bot
     runpy.run_path(str(Path(__file__).parent / "bot" / "bot.py"), run_name="__main__")

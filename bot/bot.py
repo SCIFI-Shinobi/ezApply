@@ -80,12 +80,20 @@ def send_welcome(message):
 
 
 def _seed_channels():
-    """Seed both hardcoded defaults and any ApplyFlow-defined channels."""
-    init_db()
-    ensure_channels(DEFAULT_CHANNELS)
-    extra = load_applyflow_channels()
-    if extra:
-        ensure_channels(extra)
+    """Seed both hardcoded defaults and any ApplyFlow-defined channels.
+    
+    Runs silently if the database is unreachable on startup — the bot will
+    still start and retry seeding on the first command.
+    """
+    try:
+        init_db()
+        ensure_channels(DEFAULT_CHANNELS)
+        extra = load_applyflow_channels()
+        if extra:
+            ensure_channels(extra)
+    except Exception as exc:
+        print(f"[WARNING] Could not seed channels on startup (DB unreachable?): {exc}")
+        print("[WARNING] Bot will keep running. Channels will be seeded on first /start or /channels command.")
 
 
 @bot.message_handler(content_types=["document"])
@@ -532,5 +540,6 @@ def notify(chat_id: str, text: str):
 if __name__ == "__main__":
     if not BOT_TOKEN:
         raise RuntimeError("BOT_TOKEN is not set")
-    _seed_channels()
+    _seed_channels()  # best-effort — failure here is logged but won't stop the bot
+    print("[INFO] Bot is running. Waiting for messages...")
     bot.infinity_polling()

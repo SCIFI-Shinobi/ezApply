@@ -1,142 +1,173 @@
-# Job/Scholarship Matching Bot
+# ezApply — Telegram Job & Scholarship Alert Bot
 
-ezApply is the Telegram version of ApplyFlow. It runs without Claude: resume parsing is deterministic, matching uses local embeddings plus hardcoded keyword scoring, and channels/profile data can be managed from Telegram.
+> **You join Telegram job channels. ezApply watches them for you and pings you the moment a match appears.**
 
-Two processes run together:
+ezApply runs 24/7 on a free cloud server. It reads your resume once, builds an AI profile from it, then monitors every Telegram job/scholarship channel you're in. When a new post matches your skills and target roles, it sends you a private Telegram message with a direct link so you can apply immediately.
 
-1. `bot.py` - the Telegram bot you talk to for resume upload, profile edits, and channel commands.
-2. `userbot/userbot.py` - a Telethon client logged in as your own Telegram account. It reads new posts in tracked channels, matches them against your profile, and sends alerts through the bot.
+---
 
-## 1. Set Up Accounts And Keys
+## How It Works
 
-- Bot token: talk to [@BotFather](https://t.me/BotFather) on Telegram, create a bot, and copy the token.
-- Your Telegram user ID: message [@userinfobot](https://t.me/userinfobot), it replies with your numeric ID.
-- Telethon API ID/hash: go to https://my.telegram.org, create an app, and copy the API ID/hash.
-- Database URL: your Supabase Postgres connection string.
-
-Environment variables:
-
-```text
-BOT_TOKEN=
-YOUR_TELEGRAM_USER_ID=
-TG_API_ID=
-TG_API_HASH=
-TG_SESSION_STRING=
-DATABASE_URL=
-MATCH_THRESHOLD=0.55
-KEYWORD_MATCH_THRESHOLD=50
-APPLYFLOW_PROFILE_PATH=
+```
+Your Telegram account
+    → joins job/scholarship channels
+         → ezApply Userbot reads every new post
+              → AI embedding + keyword rules check if it matches your profile
+                   → If it matches: Bot sends you a private alert with a link
 ```
 
-`APPLYFLOW_PROFILE_PATH` is optional. By default ezApply looks for `../ApplyFlow/profile.json`.
+That's the whole point. Everything else is optional.
 
-## 2. Create The DB Tables
+---
 
-Run `db/schema.sql` once against Supabase.
+## Quick Start (5 steps)
 
+### Step 1 — Get your Telegram Bot token
+Talk to [@BotFather](https://t.me/BotFather) on Telegram → `/newbot` → copy the token.
+
+### Step 2 — Get your Supabase database URL
+1. Go to [supabase.com](https://supabase.com) → create a free project.
+2. Go to **Project Settings → Database → Connection string → URI** → copy it.
+3. Replace `[YOUR-PASSWORD]` with your DB password.
+
+> **Important for Render (free tier):** Supabase's default connection string uses IPv6.
+> Render's free tier only supports IPv4. In Supabase, go to
+> **Project Settings → Database → Connection string** and check the
+> **"Use connection pooler"** box, then copy the pooler URL (port 6543).
+> That URL is IPv4-compatible and will work on Render free.
+
+### Step 3 — Generate your Userbot session string (run this on your own PC once)
 ```bash
-psql "$DATABASE_URL" -f db/schema.sql
-```
-
-## 3. Generate Your Telethon Session
-
-```bash
+git clone https://github.com/your-username/ezApply
+cd ezApply
 pip install -r requirements.txt
+
+# Set these two temporarily in your terminal:
+set TG_API_ID=your_api_id        # from https://my.telegram.org
+set TG_API_HASH=your_api_hash
+
 python userbot/generate_session.py
 ```
+Enter your phone number and the code Telegram sends you. Copy the long string it prints — that's your `TG_SESSION_STRING`.
 
-Copy the printed session string into `TG_SESSION_STRING`.
+> Get `TG_API_ID` and `TG_API_HASH` from [my.telegram.org](https://my.telegram.org) → API development tools → Create app.
 
-## 4. Join The Channels
+### Step 4 — Deploy to Render (free)
+1. Fork this repo and connect it to [render.com](https://render.com).
+2. Create a new **Web Service** pointing to this repo.
+3. Set the following **Environment Variables**:
 
-Telethon reads channels your personal Telegram account has joined. Open Telegram and join every channel you want tracked.
+| Variable | What it is |
+|---|---|
+| `BOT_TOKEN` | From BotFather |
+| `YOUR_TELEGRAM_USER_ID` | Your numeric Telegram ID (get it from [@userinfobot](https://t.me/userinfobot)) |
+| `DATABASE_URL` | Supabase pooler connection string (IPv4, port 6543) |
+| `TG_API_ID` | From my.telegram.org |
+| `TG_API_HASH` | From my.telegram.org |
+| `TG_SESSION_STRING` | The string you generated in Step 3 |
 
-Default monitored channels:
+4. Deploy. The bot and userbot start automatically.
 
-```text
-@OHUB4AllET - scholarship
-@Tegegnpathway - scholarship
-@ethio_job_vacancy1 - job
-@harmeejobs - job
-@jobs_in_ethio - job
+### Step 5 — Join channels and upload your resume
+1. **Join** the Telegram job/scholarship channels you want monitored from your personal account.
+2. Open your bot on Telegram → send `/start`.
+3. Upload your `.pdf` or `.docx` resume directly in the chat.
+4. The bot parses it, builds your AI profile, and starts matching against every channel post from that moment on.
+
+---
+
+## Managing Channels
+
+The userbot can only monitor channels that **your personal Telegram account is already a member of**. Join a channel first, then register it with the bot:
+
+```
+/channels                                   — list currently tracked channels
+/addchannel @ethiojobs job                  — track a new job channel
+/addchannel https://t.me/scholarships scholarship  — track a scholarship channel
+/syncchannels                               — re-sync default + any extra channels
 ```
 
-## 5. Run The Telegram Bot
+**Default channels already seeded on startup:**
+- `@OHUB4AllET` (scholarships)
+- `@Tegegnpathway` (scholarships)
+- `@ethio_job_vacancy1` (jobs)
+- `@harmeejobs` (jobs)
+- `@jobs_in_ethio` (jobs)
 
-```bash
-python bot.py
+---
+
+## Managing Your Profile
+
+```
+(upload .pdf or .docx)    — parse resume and build/update your profile
+/profile                  — view your current profile summary
+/profilejson              — view the full raw profile JSON
+/setprofile skills Python, FastAPI, React    — manually edit a field
+/setprofile target_roles Software Engineer Intern, Backend Developer
+/reloadapplyflowprofile   — reload from ApplyFlow/profile.json if you use ApplyFlow
 ```
 
-Useful commands:
+---
 
-```text
-/start
-/channels
-/syncchannels
-/addchannel https://t.me/harmeejobs job
-/addchannel someScholarshipChannel scholarship
-/profile
-/profilejson
-/setprofile skills Python, FastAPI, React, PostgreSQL
-/setprofile target_roles Software Engineering Intern, Backend Developer Intern
-/setprofile location_preference Remote, Ethiopia, East Africa
-/reloadapplyflowprofile
-/companies 25
-/draftcompany 10up
-/draftjob Backend Intern | Paste the job description here
-/draftremote 100
-/findemail 10up
-/findremoteemails 25
+## Tuning Match Sensitivity
+
+Set these in your Render environment variables (defaults are fine to start):
+
+| Variable | Default | Description |
+|---|---|---|
+| `MATCH_THRESHOLD` | `0.55` | Cosine similarity (0–1). Raise if getting too many false alerts. |
+| `KEYWORD_MATCH_THRESHOLD` | `50` | Rule-based score bonus. Lower = more sensitive. |
+
+---
+
+## Email Outreach (Optional — Separate Feature)
+
+ezApply also includes a cold email outreach module, completely independent of the channel monitoring. If you want the bot to send internship inquiry emails on your behalf:
+
+1. Add `EMAIL_FROM` (your Gmail address) and `EMAIL_PASSWORD` (a 16-character [Google App Password](https://support.google.com/accounts/answer/185833)) to your Render environment variables.
+2. Use these commands:
+
+```
+/companies [limit]             — list companies from ApplyFlow/remote_companies.json
+/draftcompany <company>        — preview a cold internship email before sending
+/sendemail <company>           — send an internship inquiry email to one company
+/sendremoteemails [limit]      — bulk-send to all companies with a known email
+/draftjob <company> | <job>    — draft a tailored application email from a job posting
+/findemail <company>           — discover possible contact emails for a company
+/findremoteemails [limit]      — build a company → email contact list
+/draftremote [limit]           — export a CSV of outreach drafts
 ```
 
-## 6. Upload Or Edit Your Profile
+> This feature reads from `ApplyFlow/remote_companies.json` and `ApplyFlow/company_contacts.json`.
+> It works independently and does not affect channel monitoring.
 
-Send your `.pdf` or `.docx` resume to the bot. It extracts text locally, combines it with ApplyFlow profile defaults when available, builds the matching summary, embeds it, and stores it.
+---
 
-Use `/profilejson` to inspect the parsed profile and `/setprofile` to edit the most important fields without touching the database.
+## Architecture
 
-## 7. Run The Userbot
-
-```bash
-python userbot/userbot.py
+```
+bot.py (entry point)
+├── bot/bot.py          — Telegram Bot (commands, resume upload, profile management)
+├── userbot/userbot.py  — Telethon Userbot (channel listener, match engine, alerts)
+├── db/db.py            — PostgreSQL (Supabase) — profiles, channels, posts, matches
+├── matcher/matcher.py  — Sentence-Transformers embeddings + keyword rules
+├── parser/             — Resume PDF/DOCX text extraction + LLM profile parsing
+├── config/defaults.py  — Default channels, default profile, normalization helpers
+└── outreach/           — (Optional) Cold email drafting and sending
 ```
 
-Whenever a tracked channel posts something, ezApply embeds the post, applies hardcoded matching rules, compares it against your profile embedding, and sends you a Telegram alert when it passes the threshold.
+---
 
-## Internship Outreach Drafts
+## Troubleshooting
 
-To generate polite internship inquiry drafts from ApplyFlow's remote company list:
+**Bot crashes with `psycopg2.OperationalError: Network is unreachable`**
+→ Your `DATABASE_URL` is using an IPv6 address that Render free tier can't reach.
+→ In Supabase: Project Settings → Database → enable **Connection pooler** → copy the pooler URL (port 6543). Use that as your `DATABASE_URL`.
 
-```bash
-python outreach/internship_outreach.py --limit 50
-```
+**Userbot starts but I'm not getting any alerts**
+→ Make sure your personal Telegram account (the one you used for `generate_session.py`) is actually **joined** to the channels you added with `/addchannel`.
+→ Check that `TG_SESSION_STRING` is set correctly in Render — it should be a very long string.
+→ Verify your profile is saved: send `/profile` to your bot.
 
-This creates `outreach/internship_outreach_drafts.csv` with company names, blank email fields, subjects, and message bodies. Fill in verified company email addresses and review before sending anything.
-
-The Telegram bot can also prepare drafts:
-
-```text
-/companies 25
-/draftcompany 37signals
-/draftjob Python Backend Intern | Paste the full job post here
-/draftremote 100
-/findemail 10up
-/findremoteemails 25
-```
-
-`/draftremote` sends you a CSV generated from `../ApplyFlow/remote_companies.json`. If `outreach/company_contacts.json` exists, it fills the email column with the best discovered or guessed contact for each company.
-
-To build a company-to-email dictionary:
-
-```bash
-python outreach/company_contacts.py --limit 25
-python outreach/company_contacts.py --company 10up
-```
-
-This writes `outreach/company_contacts.json`. Entries include `verified_emails` when found on company pages, `possible_emails` guessed from the domain, source URLs, and a confidence label. Use guessed emails carefully.
-
-## Deployment Notes
-
-Free-tier Render web services sleep after idle time, which breaks polling and the live Telethon connection. Railway or a paid background worker is better for 24/7 monitoring.
-
-Tune `MATCH_THRESHOLD` and `KEYWORD_MATCH_THRESHOLD` after a few days of real alerts. Raise them if matches are too broad; lower them if ezApply misses good internships.
+**`No TG_SESSION_STRING set` in logs**
+→ Run `python userbot/generate_session.py` on your local machine and add the output to Render's environment variables.

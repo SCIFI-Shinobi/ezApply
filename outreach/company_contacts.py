@@ -10,8 +10,8 @@ import requests
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
-DEFAULT_COMPANIES_PATH = Path(__file__).resolve().parents[2] / "ApplyFlow" / "remote_companies.json"
-DEFAULT_CONTACTS_PATH = Path(__file__).resolve().parent / "company_contacts.json"
+DEFAULT_COMPANIES_PATH = Path(__file__).resolve().parents[1] / "applyflow_data" / "remote_companies.json"
+DEFAULT_CONTACTS_PATH = Path(__file__).resolve().parents[1] / "applyflow_data" / "company_contacts.json"
 
 EMAIL_RE = re.compile(r"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}", re.IGNORECASE)
 COMMON_PATHS = ["", "/contact", "/careers", "/jobs", "/about"]
