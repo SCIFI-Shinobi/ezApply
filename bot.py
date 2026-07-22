@@ -1,10 +1,8 @@
-import os 
+import os
+import runpy
 import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
-
-import telebot
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
-bot = telebot.TeleBot(BOT_TOKEN)
+from pathlib import Path
 
 
 class HealthHandler(BaseHTTPRequestHandler):
@@ -28,17 +26,7 @@ def start_http_server():
     server = HTTPServer(("0.0.0.0", port), HealthHandler)
     server.serve_forever()
 
-@bot.message_handler(commands=['start'])
-def send_welcome(message):
-    bot.reply_to(message, "Hello! I am your friendly bot. How can I assist you today?")
-
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-    bot.reply_to(message, message.text) 
-
 
 if __name__ == "__main__":
-    if not BOT_TOKEN:
-        raise RuntimeError("BOT_TOKEN is not set")
     threading.Thread(target=start_http_server, daemon=True).start()
-    bot.infinity_polling()
+    runpy.run_path(str(Path(__file__).parent / "bot" / "bot.py"), run_name="__main__")
