@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: ezapply-bot
+    env: python
+    runtime: python
+    pythonVersion: "3.12"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
