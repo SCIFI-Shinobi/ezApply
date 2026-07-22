@@ -16,6 +16,7 @@ from db.db import (
     list_channels,
     save_profile,
     update_latest_profile,
+    init_db,
 )
 from matcher.matcher import embed
 from outreach.company_contacts import (
@@ -80,6 +81,7 @@ def send_welcome(message):
 
 def _seed_channels():
     """Seed both hardcoded defaults and any ApplyFlow-defined channels."""
+    init_db()
     ensure_channels(DEFAULT_CHANNELS)
     extra = load_applyflow_channels()
     if extra:
